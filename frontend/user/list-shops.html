@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Shops</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .section-heading {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 20px;
+            height: 50px; /* Fixed height for section heading */
+            overflow: hidden; /* Hide overflow content */
+        }
+
+        .section-heading h1 {
+           /* Marquee animation for heading */
+            white-space: nowrap; /* Prevent heading from wrapping */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .section-heading1 {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 20px;
+            height: 50px; /* Fixed height for section heading */
+            overflow: hidden; /* Hide overflow content */
+        }
+
+      
+
+        .products {
+            overflow-x: auto; /* Enable horizontal scrolling */
+            white-space: nowrap; /* Prevent wrapping */
+            padding: 20px;
+            background-color: transparent; /* Transparent background for products */
+        }
+
+        .box {
+            border: none; /* Remove border */
+            box-shadow: none; /* Remove box shadow */
+            margin-right: 20px;
+            display: inline-block;
+            vertical-align: top;
+            width: 350px; /* Fixed width for each product box */
+            background-color: transparent; /* Transparent background for boxes */
+        }
+
+        .box img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            animation: slide 8s linear infinite; /* Continuous slide animation for images */
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .about {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .about h1 {
+            text-align: center;
+        }
+
+        .about p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        .contact {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .contact h3, .contact h4 {
+            margin: 5px 0;
+        }
+
+        .contact p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="section-heading1">
+        <h1>Shopping products List</h1>
+   </div>
+
+    <div class="section-heading">
+        <h1>Foods</h1>
+   </div>
+
+    <div class="products">
+        <div class="box">
+            <img src="./images/food/pexels-chevanon-323682.jpg" alt="Product 1">
+           
+        </div>
+        <div class="box">
+            <img src="./images/food/pexels-jessbaileydesign-913136.jpg" alt="Product 2">
+          
+        </div>
+        <div class="box">
+            <img src="./images/food/pexels-rajesh-tp-749235-1633525.jpg" alt="Product 3">
+           
+        </div>
+        <div class="box">
+            <img src="./images/food/pexels-solodsha-9009488.jpg" alt="Product 4">
+        
+        </div>
+    </div>
+
+
+    <div class="section-heading">
+        <h1>Furnitures</h1>
+    </div>
+
+    <div class="products">
+        <div class="box">
+            <img src="./images/furniture/pexels-andrew-3201758.jpg" alt="Product 5">
+           
+        </div>
+        <div class="box">
+            <img src="./images/furniture/pexels-arnon-suksumran-367077-996219.jpg" alt="Product 6">
+           
+        </div>
+        <div class="box">
+            <img src="./images/furniture/pexels-fotoaibe-1571463.jpg" alt="Product 6">
+           
+        </div>
+        <div class="box">
+            <img src="./images/furniture/pexels-tima-miroshnichenko-6827327.jpg" alt="Product 6">
+           
+        </div>
+        <!-- Add more boxes for Section 2 as needed -->
+    </div>
+    
+    <!-- Repeat the above pattern for Section 3, 4, and 5 -->
+    <div class="section-heading">
+        <h1>Cinema</h1>
+   </div>
+
+    <div class="products">
+        <div class="box">
+            <img src="./images/cinima/pexels-conojeghuo-375885.jpg" alt="Product 1">
+           
+        </div>
+        <div class="box">
+            <img src="./images/cinima/pexels-donaldtong94-109669.jpg" alt="Product 2">
+           
+        </div>
+        <div class="box">
+            <img src="./images/cinima/pexels-hngstrm-3137890.jpg" alt="Product 3">
+        
+        </div>
+        <div class="box">
+            <img src="./images/cinima/pexels-jibarofoto-2774556.jpg" alt="Product 4">
+          
+        </div>
+        <div class="box">
+            <img src="./images/cinima/pexels-laup-1790556.jpg" alt="Product 4">
+          
+        </div>
+    </div>
+
+<div class="section-heading">
+    <h1>groceries</h1>
+</div>
+
+<div class="products">
+    <div class="box">
+        <img src="./images/groceris/pexels-caio-64613.jpg" alt="Product 1">
+        
+    </div>
+    <div class="box">
+        <img src="./images/groceris/pexels-cenali-2733918.jpg" alt="Product 2">
+       
+    </div>
+    <div class="box">
+        <img src="./images/groceris/pexels-jack-sparrow-4198970.jpg" alt="Product 3">
+      
+    </div>
+    <div class="box">
+        <img src="./images/groceris/pexels-shvetsa-3962285.jpg" alt="Product 4">
+       
+    </div>
+</div>
+
+<div class="section-heading">
+    <h1>Vegetables</h1>
+</div>
+
+<div class="products">
+    <div class="box">
+        <img src="./images/vegetables/pexels-angele-j-35172-128402.jpg" alt="Product 1">
+        
+    </div>
+    <div class="box">
+        <img src="./images/vegetables/pexels-enginakyurt-1435904.jpg" alt="Product 2">
+       
+    </div>
+    <div class="box">
+        <img src="./images/vegetables/pexels-reneterp-3167310.jpg" alt="Product 3">
+      
+    </div>
+    <div class="box">
+        <img src="./images/vegetables/pexels-suju-1366883.jpg" alt="Product 4">
+       
+    </div>
+</div>
+
+    <div class="about">
+        <h1>About Us</h1>
+        <p>Welcome to Our MALL, your ultimate destination for shopping, dining, and entertainment. Located in the heart of Tenkasi, Our MALL offers a vibrant and diverse shopping experience like no other. With a wide array of stores, from luxury brands to everyday essentials, you'll find everything you need under one roof.</p>
+    </div>
+
+    <div class="contact">
+        <h3>Contact</h3>
+        <h4>91 9080249092</h4>
+        <h4>jmrajini123@gmail.com</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur culpa magnam doloribus eligendi.</p>
+    </div>
+</body>
+</html>

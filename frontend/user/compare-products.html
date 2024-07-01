@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Products</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+nav {
+    text-align: center;
+    margin-top: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 5px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+
+main {
+    padding: 20px;
+}
+
+#compareSection {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#productAmountSelect {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.product-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.product-box {
+    width: 300px;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product-description {
+    margin-top: 10px;
+    text-align: justify;
+}
+
+.product-price {
+    font-weight: bold;
+    color: #333;
+}
+
+    </style>
+</head>
+<body>
+ 
+    <main>
+        <section id="compareSection">
+            <h2>Select Number of Products to Compare:</h2>
+            <select id="productAmountSelect">
+                <option value="3">3 Products</option>
+                <option value="4">4 Products</option>
+                <option value="5">5 Products</option>
+                <option value="6">6 Products</option>
+            </select>
+            <div id="productContainer" class="product-container">
+                <!-- Product details will be dynamically loaded here -->
+            </div>
+        </section>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const productAmountSelect = document.getElementById('productAmountSelect');
+    const productContainer = document.getElementById('productContainer');
+
+    productAmountSelect.addEventListener('change', function() {
+        const selectedAmount = parseInt(productAmountSelect.value);
+        fetchProducts(selectedAmount);
+    });
+
+    function fetchProducts(amount) {
+        // Simulated data for demonstration
+        const products = [
+            { 
+                name: 'Product 1',
+                image: './images/offer/black-friday-super-sale-social-media-banner-template_120329-2128.avif',
+                description: 'Description of Product 1.',
+                price: '$100'
+            },
+            {
+                name: 'Product 2',
+                image: './images/offer/gradient-sales-discount-poster-template_23-2149959335.avif',
+                description: 'Description of Product 2.',
+                price: '$120'
+            },
+            {
+                name: 'Product 3',
+                image: './images/offer/black-friday-super-sale-social-media-banner-template_120329-1078.avif',
+                description: 'Description of Product 3.',
+                price: '$80'
+            },
+            {
+                name: 'Product 4',
+                image: './images/offer/three-horizontal-organic-cosmetics-ingredients-realistic-banner-set-with-sale-season-new-collection-descriptions-vector-illustration_1284-30845.avif',
+                description: 'Description of Product 4.',
+                price: '$150'
+            },
+            {
+                name: 'Product 5',
+                image: './images/offer/hot-sale-shopping-day-social-media-post-template-banner-premium-vector_640223-60.avif',
+                description: 'Description of Product 5.',
+                price: '$90'
+            },
+            {
+                name: 'Product 6',
+                image: './images/offer/skin-care-products-blurred-background-with-twigs-leaf_297886-301.avif',
+                description: 'Description of Product 6.',
+                price: '$110'
+            }
+        ];
+
+        // Clear previous products
+        productContainer.innerHTML = '';
+
+        // Display the selected amount of products
+        for (let i = 0; i < amount; i++) {
+            const product = products[i];
+            if (product) {
+                const productBox = document.createElement('div');
+                productBox.classList.add('product-box');
+                productBox.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    <p class="product-description">${product.description}</p>
+                    <p class="product-price">${product.price}</p>
+                `;
+                productContainer.appendChild(productBox);
+            }
+        }
+    }
+
+    // Initially load products for the default selected amount
+    fetchProducts(parseInt(productAmountSelect.value));
+});
+
+    </script>
+</body>
+</html>

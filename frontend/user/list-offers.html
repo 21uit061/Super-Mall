@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Offers</title>
+  <style>
+
+    /* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav {
+    text-align: center;
+    margin-top: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+main {
+    text-align: center;
+    padding: 20px;
+    color: #333;
+}
+
+.offers-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.offer-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.offer-item:hover {
+    transform: translateY(-5px);
+}
+
+.offer-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.offer-details {
+    margin-top: 10px;
+}
+
+.offer-details h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.offer-details p {
+    line-height: 1.6;
+}
+
+.offer-price {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.offer-price span {
+    font-size: 1.2em;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+  </style>
+</head>
+<body>
+    <header>
+        <h1>Special Offers</h1>
+   
+    </header>
+    <main>
+        <section id="offersSection" class="offers-section">
+            <!-- Offer items will be dynamically loaded here -->
+            <div class="offer-item">
+                <img src="./images/offer/hot-sale-shopping-day-social-media-post-template-banner-premium-vector_640223-60.avif" alt="Offer 1">
+                <div class="offer-details">
+                    <h2>Laptops and Watches</h2>
+                    <p>Description of the offer.</p>
+                    <div class="offer-price">
+                        <span>₹</span> 500
+                    </div>
+                    <button>Buy Now</button>
+                </div>
+            </div>
+            <div class="offer-item">
+                <img src="./images/offer/black-friday-super-sale-social-media-banner-template_120329-2128.avif" alt="Offer 1">
+                <div class="offer-details">
+                    <h2>Watch</h2>
+                    <p>Description of the offer.</p>
+                    <div class="offer-price">
+                        <span>₹</span> 500
+                    </div>
+                    <button>Buy Now</button>
+                </div>
+            </div>
+            <div class="offer-item">
+                <img src="./images/offer/dynamic-sports-shoes-winter-sale-social-media-banner-instagram-post-template_447661-316.avif" alt="Offer 1">
+                <div class="offer-details">
+                    <h2>Sport Shoe</h2>
+                    <p>Description of the offer.</p>
+                    <div class="offer-price">
+                        <span>₹</span> 350
+                    </div>
+                    <button>Buy Now</button>
+                </div>
+            </div>
+            <!-- Repeat for other offer items -->
+        </section>
+    </main>
+    <script >document.addEventListener('DOMContentLoaded', function() {
+        const buttons = document.querySelectorAll('.offer-item button');
+    
+        buttons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                const offerItem = event.target.closest('.offer-item');
+                const name = offerItem.querySelector('h2').textContent.trim();
+                const description = offerItem.querySelector('p').textContent.trim();
+                const price = parseInt(offerItem.querySelector('.offer-price span').textContent.trim());
+    
+                const productData = {
+                    name,
+                    description,
+                    price
+                };
+    
+                fetch('http://localhost:5000/api/store-product', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(productData)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Product details stored successfully!');
+                    } else {
+                        alert('Failed to store product details.');
+                    }
+                })
+                .catch(error => console.error('Error storing product:', error));
+            });
+        });
+    });
+    </script>
+</body>
+</html>

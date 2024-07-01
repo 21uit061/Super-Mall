@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Shops</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Manage Shops</h1>
+        <div id="shopList"></div>
+    </div>
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('http://localhost:5000/admin/shops', {
+                headers: {
+                    'Authorization': 'Bearer ' + localStorage.getItem('token')
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                const shopList = document.getElementById('shopList');
+                data.forEach(shop => {
+                    const shopDiv = document.createElement('div');
+                    shopDiv.innerHTML = `
+                        <h3>${shop.name}</h3>
+                        <p>Category: ${shop.category}</p>
+                        <p>Floor: ${shop.floor}</p>
+                        <p>Details: ${shop.details}</p>
+                        <button onclick="editShop('${shop._id}')">Edit</button>
+                        <button onclick="deleteShop('${shop._id}')">Delete</button>
+                    `;
+                    shopList.appendChild(shopDiv);
+                });
+            })
+            .catch(error => console.error('Error:', error));
+        });
+
+        function editShop(id) {
+            // Implement edit functionality
+        }
+
+        function deleteShop(id) {
+            fetch(`http://localhost:5000/admin/shop/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': 'Bearer ' + localStorage.getItem('token')
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data) {
+                    alert('Shop deleted successfully');
+                    location.reload();
+                } else {
+                    alert('Error deleting shop');
+                }
+            })
+        } -->
+            </body>
+            </html>
